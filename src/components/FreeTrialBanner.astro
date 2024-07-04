@@ -1,0 +1,103 @@
+<div id="free-trial-banner" class="fixed bottom-0 bg-blue-500 text-white py-4 px-6 flex justify-between items-center border">
+  <p>Would you like to enquire about a free demo for your business?</p>
+  <button style="border: 1px solid black" id="hide-banner-button" class="bg-white text-blue-500 px-4 py-2 rounded size">
+    Yes, get started!
+  </button>
+  <button style="border: 1px solid black" id="negative-hide-banner-button" class="bg-white text-blue-500 px-4 py-2 rounded size margin">
+    No, thanks!
+  </button>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const banner = document.getElementById('free-trial-banner');
+    const button = document.getElementById('hide-banner-button');
+    const button1 =document.getElementById('negative-hide-banner-button');
+    button1.addEventListener('click', function () {
+      if (banner) {
+        banner.style.display = 'none';
+      }
+    });
+    if (banner) {
+      button.addEventListener('click', function () {
+        window.location.href = '/demo';
+      });
+    }
+  });
+</script>
+<style>
+  .fixed {
+    position: fixed;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 960px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .bottom-0 {
+    bottom: 0;
+  }
+  .border {
+    border-radius: 10px;
+    border: 1px solid black; 
+    border-style: groove;
+    z-index: 1000;
+  }
+  .bg-blue-500 {
+    background-color: white;
+  }
+  .text-white {
+    color: black;
+  }
+  .margin{
+    margin-right: 10px;
+  }
+  .py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .flex {
+    display: grid;
+    grid-template-columns: 65% 17.5% 17.5%;
+    column-gap: 1%;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .bg-white {
+    background-color: #ffffff;
+  }
+  .text-blue-500 {
+    color: black;
+  }
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  .size{
+    font-size: 13px;
+  }
+  #negative-hide-banner-button:hover {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+  }
+  #hide-banner-button:hover {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+  }
+</style>

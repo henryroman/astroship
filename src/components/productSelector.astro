@@ -1,0 +1,308 @@
+---
+import Button from "@components/ui/button.astro";
+import { Icon } from "astro-icon/components";
+
+const selectors = [
+  { title: "Pos Integration", option1: "yes", option2: "no", cost: 5, description: "Integrate your existing POS technologies to create a centralized management hub.", icon: "uil:chat-info" },
+  { title: "Retail Analytics", option1: "yes", option2: "no", cost: 5, description: "Track and analyse customer behaviour in your store with state-of-art inference tools.", icon: "uil:document-info" },
+  { title: "Retail Analytics +", option1: "yes", option2: "no", cost: 5, description: "Our comprehenisve inference suite for tracking advanced customer behavior.", icon: "uil:document-info" },
+  { title: "Data Review", option1: "yes", option2: "no", cost: 5, description: "Personalized actionable deep-learning reports based on global customer data.", icon: "uil:document-info" },
+  { title: "Cloud Storage", option1: "yes", option2: "no", cost: 5, description: "Secure cloud storage for your historic surveillance footage.", icon: "uil:document-info" },
+  { title: "All-in-one", option1: "yes", option2: "no", cost: 25, description: "All-in-one solution for your retail store with all of our features.", icon: "uil:document-info" },
+];
+---
+
+<div id="features" class="mt-10 mb-10 text-center">
+  <h2 style ="margin-bottom: 1%" class="text-2xl font-bold">Features</h2>
+  <div class="flex justify-center">
+    {selectors.map((item, index) => (
+      <div class="feature-item mx-2 text-left border p-4 rounded-md" id={`feature-${index}`}>
+        <p id = "feature-title" class="feature-title">{item.title}</p>
+        <p id = "feature-description" class="text-gray-600">{item.description}</p>
+      </div>
+    ))}
+  </div>
+</div>
+
+<div id="result" class="grid grid-cols-3 border border-gray-300 gap-4" style="min-height: 80vh;"> <!-- Increased page height by setting min-height -->
+  <div id="left-side" class="p-4 text-lg">
+    <div id="calculator" class="mb-4"> <!-- Total Cost section moved higher up in column 1 -->
+      <p class="font-bold text-red-500 text-2xl">Normal Cost: $<span id="total-cost">0</span>/week/camera</p> <!-- Red color for Total Cost text -->
+      <p class="font-bold text-black text-xl">Your Cost: $<span id="your-cost">0</span></p> <!-- Your Cost text -->
+    </div>
+    <div>
+      <p class="font-bold text-black text-xl">Select your options</p>
+      <p class="text-gray-600">Please select the options that you would like to have in your demo of our product. On the left there is a calculator that will show you the cost of your solution in USD per camera per week.</p>
+    </div>
+  </div>
+  <div id="form-section" class="border-l border-gray-300 p-4">
+    <form id="form" class="needs-validation" novalidate> <!-- Removed overflow and max-height for full column height -->
+      {selectors.map((item, index) => (
+        <div class="option-group mb-4 border border-gray-300 p-3 rounded-md relative group" key={index} onMouseOver={() => highlightFeature(index)} onMouseOut={() => unhighlightFeature(index)}>
+          <span id="pseudo"> <p class="font-bold text-black">{item.title}  </p> </span>
+          <div class="toggles flex items-center gap-4">
+            <label>
+              <input type="radio" name={`option-${index}`} value="yes" data-cost={item.cost} class="mr-1" /> <span class="text-gray-800"> {item.option1}</span>
+            </label>
+            <label>
+              <input type="radio" name={`option-${index}`} value="no" data-cost="0" class="mr-1" /> <span class="text-gray-800">{item.option2}</span>
+            </label>
+          </div>
+        </div>
+      ))}
+    </form>
+  </div>
+  <div id="email-section" class="border-l border-gray-300 p-4">
+    <form id="email-form" class="needs-validation" novalidate>
+      <div class="mb-5">
+        <input
+          type="text"
+          placeholder="Name"
+          required
+          class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+          name="name"
+        />
+        <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+          Please provide your name.
+        </div>
+      </div>
+      <div class="mb-5">
+        <input
+          type="email"
+          placeholder="Business Email Address"
+          name="email"
+          required
+          class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+        />
+        <div class="empty-feedback text-red-400 text-sm mt-1">
+          Please provide your business email address.
+        </div>
+        <div class="invalid-feedback text-red-400 text-sm mt-1">
+          Please provide a valid business email address.
+        </div>
+      </div>
+      <div class="mb-5">
+        <textarea
+          name="message"
+          required
+          placeholder="Your Message"
+          class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none h-36 focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+        ></textarea>
+        <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+          Please enter your message.
+        </div>
+      </div>
+      <div class="mb-5">
+        <input
+          type="text"
+          id="demo-id-box"
+          placeholder="Demo ID"
+          readonly
+          class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+        />
+      </div>
+      <Button type="submit" size="lg" block>Send Message</Button>
+    </form>
+  </div>
+</div>
+
+
+
+<p id="space">Henry Romantsov CEO and proud computer scientist</p>
+
+<style>
+  .invalid-feedback,
+  .empty-feedback {
+    display: none;
+  }
+  
+  .was-validated :placeholder-shown:invalid ~ .empty-feedback {
+    display: block;
+  }
+  
+  .was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
+    display: block;
+  }
+  
+  .is-invalid,
+  .was-validated :invalid {
+    border-color: #dc3545;
+  }
+  
+  .option-group {
+    border: 1px solid #d1d5db;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    position: relative;
+  }
+  
+  .option-group:hover {
+    border-color: #4a5568;
+  }
+
+  .option-group input[type="radio"]:checked + span {
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .option-group label span {
+    margin-left: 0.5rem;
+  }
+  
+  .text-gray-800 {
+    color: #2d3748;
+  }
+
+  .feature-item {
+    flex: 1;
+    min-width: 150px;
+    border: 1px solid #d1d5db;
+    padding: 1rem;
+    border-radius: 0.375rem;
+  }
+
+  .feature-item p {
+    margin: 0;
+  }
+
+  .feature-title {
+    font-size: 1.2em;
+  }
+
+  .highlight {
+    font-weight: bold;
+    color: black;
+  }
+
+  #feature-title {
+    font-size: 1em;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    margin-bottom: 0.5rem;
+  }
+
+  #feature-description {
+    font-size: 0.8em;
+    white-space: pre-wrap;
+    padding: 0px
+    
+  }
+
+  #space {
+    visibility: hidden;
+    margin-bottom: 50%;
+  }
+
+  #pseudo:hover { 
+
+  }
+
+
+  
+
+</style>
+
+<script>
+  const selectors = [
+    { title: "Pos Integration", option1: "yes", option2: "no", cost: 5, description: "Integrate your existing POS technologies to create a centralized management hub." },
+    { title: "Retail Analytics Standard", option1: "yes", option2: "no", cost: 5, description: "Monitor store performance with real-time analytics and notifications." },
+    { title: "Retail Analytics Pro", option1: "yes", option2: "no", cost: 5, description: "Advanced analytics for customer behavior and sales trends." },
+    { title: "Deep Learning Suggestions", option1: "yes", option2: "no", cost: 5, description: "Personalized product suggestions based on customer data." },
+    { title: "Video Cloud Storage", option1: "yes", option2: "no", cost: 5, description: "Secure cloud storage for your video analytics data." },
+    { title: "All-in-one", option1: "yes", option2: "no", cost: 25, description: "Complete package including all features for maximum efficiency." },
+  ];
+
+  function highlightFeature(index) {
+    const featureItem = document.getElementById(`feature-${index}`);
+    featureItem.querySelector('.feature-title').classList.add('highlight');
+  }
+
+  function unhighlightFeature(index) {
+    const featureItem = document.getElementById(`feature-${index}`);
+    featureItem.querySelector('.feature-title').classList.remove('highlight');
+  }
+
+  function updateCost() {
+    let totalCost = 0;
+    let demoId = '';
+
+    selectors.forEach((item, index) => {
+      const selectedOption = document.querySelector(`input[name="option-${index}"]:checked`);
+      if (selectedOption) {
+        const cost = parseInt(selectedOption.getAttribute('data-cost'), 10);
+        totalCost += cost;
+        demoId += selectedOption.value === 'yes' ? '1' : '0';
+      } else {
+        demoId += '0';
+      }
+    });
+
+    // If All-in-one is selected, override cost and demoId
+    const allInOneSelected = document.querySelector('input[name="option-5"][value="yes"]:checked');
+    if (allInOneSelected) {
+      totalCost = 25;
+      demoId = '111111';
+    }
+
+    document.getElementById('total-cost').innerText = totalCost.toString();
+    document.getElementById('your-cost').innerText = '0'; // Always set Your Cost to 0
+    document.getElementById('demo-id-box').value = demoId;
+  }
+
+  document.querySelectorAll('input[type="radio"]').forEach(input => {
+    input.addEventListener('change', updateCost);
+  });
+
+  updateCost();
+
+  const emailForm = document.getElementById("email-form");
+  const result = document.getElementById("result");
+
+  emailForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    emailForm.classList.add("was-validated");
+    
+    if (!emailForm.checkValidity()) {
+      emailForm.querySelectorAll(":invalid")[0].focus();
+      return;
+    }
+    
+    const formData = new FormData(emailForm);
+    formData.append('demo_id', document.getElementById('demo-id-box').value);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    result.innerHTML = "Sending...";
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    })
+    .then(async (response) => {
+      let json = await response.json();
+      if (response.status == 200) {
+        result.classList.add("text-green-500");
+        result.innerHTML = json.message;
+      } else {
+        console.log(response);
+        result.classList.add("text-red-500");
+        result.innerHTML = json.message;
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      result.innerHTML = "Something went wrong!";
+    })
+    .then(function () {
+      emailForm.reset();
+      emailForm.classList.remove("was-validated");
+      setTimeout(() => {
+        result.style.display = "none";
+      }, 5000);
+    });
+  });
+</script>

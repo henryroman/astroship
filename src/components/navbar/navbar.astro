@@ -9,11 +9,15 @@ const menuitems = [
     title: "Features",
     path: "#",
     children: [
-      { title: "Action", path: "/" },
-      { title: "Another action", path: "#" },
-      { title: "Dropdown Submenu", path: "#" },
-      { title: "404 Page", path: "/404" },
+      { title: "POS Integration", path: "/integration" },
+      { title: "Business Intelligence", path: "/businessIntelligence" },
+      { title: "Deep learning", path: "/deepLearning" },
+      { title: "All-in-one", path: "/all-in-one" },
     ],
+  },
+  {
+    title: "Demo",
+    path: "/demo",
   },
   {
     title: "Pricing",
@@ -31,11 +35,6 @@ const menuitems = [
     title: "Contact",
     path: "/contact",
   },
-  {
-    title: "Pro Version",
-    badge: true,
-    path: "https://astroship-pro.web3templates.com/",
-  },
 ];
 ---
 
@@ -44,8 +43,8 @@ const menuitems = [
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg"
-          ><span class="font-bold text-slate-800">Astro</span><span
-            class="text-slate-500">ship</span
+          ><span class="font-bold text-slate-800">Ana</span><span
+            class="text-slate-500">Vue</span
           >
         </a>
         <div class="block lg:hidden">
@@ -71,11 +70,6 @@ const menuitems = [
                       href={item.path}
                       class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
                       <span> {item.title}</span>
-                      {item.badge && (
-                        <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
-                          New
-                        </span>
-                      )}
                     </a>
                   </li>
                 )}

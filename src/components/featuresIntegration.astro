@@ -1,0 +1,67 @@
+---
+import { Icon } from "astro-icon/components";
+
+const features1 = [
+    {
+        title: "Real-time Notifications",
+        description:
+            "When paired with your POS system, Anavue will notify you of new orders, stock levels, and sales in real-time.",
+        icon: "bx:alarm",
+    },
+    {
+        title: "Peace of Mind",
+        description:
+            "Sleep soundly at night knowing that your store is secure.",
+        icon: "bx:shield-x",
+    },
+    {
+        title: "Real-time Data Access",
+        description:
+            "Real-time inventory updates prevent stockouts and overstock situations, optimizing stock levels.",
+        icon: "bx:bxs-data",
+    },
+    {
+        title: "Automate Stock Management",
+        description:
+            "Purchase orders can be automated based on inventory levels, sales trends and vendor lead times.",
+        icon: "bx:bxs-bot", 
+            },
+            {
+        title: "Consistency Across Locations",
+        description:
+            "Ensures consistent pricing, promotions, and policies across all retail locations.",
+        icon: "uil:chart-line", 
+            },
+            {
+        title: "Enhanced Security",
+        description:
+            "Centralized management can enforce standardized security measures and protocols, reducing the risk of data breaches.",
+        icon: "bx:bxs-alarm-exclamation",
+            }
+];
+---
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features1.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+
+h3 {
+  margin: 0;
+  font-size: 125%;
+  font-weight: bold;
+}
+</style>

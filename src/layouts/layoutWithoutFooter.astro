@@ -1,6 +1,5 @@
 ---
 import { SEO } from "astro-seo";
-import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
 import '@fontsource-variable/bricolage-grotesque';
@@ -59,7 +58,6 @@ const makeTitle = title
   <body>
     <Navbar />
     <slot />
-    <Footer />
     <style is:global>
       /* Improve Page speed */
       /* https://css-tricks.com/almanac/properties/c/content-visibility/ */

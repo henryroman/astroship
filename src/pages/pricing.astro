@@ -3,58 +3,52 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import PricingCard from "@components/pricing.astro";
+import FreeTrialBanner from "@components/FreeTrialBanner.astro";
 
 const pricing = [
   {
-    name: "Personal",
-    price: "Free",
+    name: "Small",
+    price: { weekly: "$8.99/week", monthly: "$31.96", annual: "$360.00" },
     popular: false,
     features: [
-      "Lifetime free",
-      "Up to 3 users",
-      "Unlimited Pages",
-      "Astro Sub domain",
-      "Basic Integrations",
-      "Community Support",
+      "Our state-of-the-art vision software",
+      "POS integration",
+      "24/7 human support",
+      "Customizable reports",
+      "No credit card required",
+      "Real time streaming analytics",
     ],
     button: {
       text: "Get Started",
-      link: "/",
+      link: "/contact",
     },
   },
   {
-    name: "Startup",
-    price: {
-      monthly: "$19",
-      annual: "$16",
-      discount: "10%",
-      original: "$24",
-    },
-    popular: true,
+    name: "Medium",
+    price: { weekly: "$14.99/week", monthly: "$58.99", annual: "$700.00" },
+    popular: false,
     features: [
-      "All Free Features",
-      "Up to 20 users",
-      "20 Custom domains",
-      "Unlimited Collaborators",
-      "Advanced Integrations",
-      "Priority Support",
+      "Everything in Small",
+      "3 month surveillance footage cloud storage",
+      "Security alerts with 24/7 tracking",
+      "Customizable dashboard",
+      "First access to new features every month",
     ],
     button: {
       text: "Get Started",
-      link: "#",
+      link: "/contact",
     },
   },
   {
-    name: "Enterprise",
+    name: "Large",
     price: "Custom",
     popular: false,
     features: [
-      "All Pro Features",
-      "Unlimited Custom domains",
-      "99.99% Uptime SLA",
-      "SAML & SSO Integration",
-      "Dedicated Account Manager",
-      "24/7 Phone Support",
+      "Everything in Medium",
+      "Unlimited surveillance footage cloud storage",
+      "Mobile app",
+      "Actionable deep-learning reports",
+      "Global data comparisons",
     ],
     button: {
       text: "Contact us",
@@ -72,9 +66,11 @@ const pricing = [
         Simple & Predictable pricing. No Surprises.
       </Fragment>
     </Sectionhead>
-
+    <div style="min-height: 300px">
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
       {pricing.map((item) => <PricingCard plan={item} />)}
     </div>
+  </div>
+    <FreeTrialBanner />
   </Container>
 </Layout>

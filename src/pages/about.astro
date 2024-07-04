@@ -5,6 +5,7 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 
+const { align = "center" } = Astro.props;
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
   return !data.draft && data.publishDate < new Date();
@@ -14,20 +15,21 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 <Layout title="About">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="title">About Us</Fragment>
+      <Fragment slot="desc">Meet the Anavue Team</Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
+        Empowering the world with retail business intelligence.
       </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+        Empower your retail business with our advanced analytics and business intelligence solutions. Our journey began in the jewelry B2B sector, where we recognized the significant impact of personal customer relationships. This insight drove us to create a startup dedicated to enhancing these relationships through data-driven decisions.
+Our mission is to help retailers optimize employee hours and product placement, leveling the playing field between small retailers and large corporations. We believe in the mantra, “You show the customer love, we take care of the rest,” which reflects our commitment to delivering actionable insights for retail success.
+We value honesty, hard work, and putting customer needs first. These core values guide our integration of customer feedback into our product lifecycle, ensuring our solutions address real-world problems. Our unique approach combines deep learning-powered insights, actionable recommendations, employee performance integration, and seamless POS integration, distinguishing us in the market.
       </p>
     </div>
+    
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       {
         publishedTeamMembers.map((teamMemberEntry) => (
@@ -39,7 +41,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
                 sizes="(max-width: 800px) 100vw, 400px"
                 width={400}
                 height={400}
-                class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
+                
               />
             </div>
 
@@ -51,7 +53,36 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
             </div>
           </div>
         ))
-      }
+      } 
     </div>
+    
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+      <div class="group">
+        <div class="mt-4 text-center">
+          <h2 class="text-lg text-gray-800">Bruno</h2>
+          <p class="text-slate-500">
+            Is a cutie patotie, RAWR
+          </p>
+        </div>
+      </div>
+      <div class="group">
+        <div class="mt-4 text-center">
+          <h2 class="text-lg text-gray-800">George</h2>
+          <p class="text-slate-500">
+            With extensive experience in supply side and stock management for jewelry retailers, George brings a deep understanding of retail challenges. His background in computer science has been instrumental in developing our innovative solutions. George's dedication to leveraging data for business intelligence drives our startup’s vision and success.
+          </p>
+        </div>
+      </div>
+      <div class="group">
+        <div class="mt-4 text-center">
+          <h2 class="text-lg text-gray-800">Henry</h2>
+          <p class="text-slate-500">
+            Henry’s diverse background spans supply chain management for jewelry retailers and sustainability in food waste and fertilizer production. Growing up with a single mother running a struggling retail location, Henry witnessed the challenges small retailers face. His passion for technology and sustainability, combined with his personal experiences, fuels his dedication to empowering retailers through data-driven insights. Henry’s expertise in deep learning and cloud computing is pivotal in advancing our product offerings and achieving our mission.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    
   </Container>
 </Layout>

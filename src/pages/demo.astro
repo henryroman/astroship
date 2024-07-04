@@ -1,0 +1,19 @@
+---
+import Container from "@components/container.astro";
+import Layout from "@layouts/layoutWithoutFooter.astro";
+import ProductSelector from "@components/productSelector.astro";
+import Footer from "@components/footer.astro";
+import Sectionhead from "@components/sectionhead.astro";
+---
+
+<Layout title="Demo">
+    <Container>
+        <Sectionhead>
+            <Fragment slot="title">Demo</Fragment>
+            <Fragment slot="desc">Our capabilities can be pretty hard to describe. Set up your free demo below to see just what our software is capable of.</Fragment>
+          </Sectionhead>
+        <ProductSelector />
+    </Container>
+</Layout>
+
+<Footer />

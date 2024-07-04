@@ -1,0 +1,18 @@
+---
+import Container from "@components/container.astro";
+import Layout from "@layouts/Layout.astro";
+import Feature from "@components/featuresLearning.astro";
+import Feature2 from "@components/featuresLearning2.astro";
+import Sectionhead from "@components/sectionhead.astro";
+---
+
+<Layout title="Deep learning with video surveillance">
+    <Container>
+      <Sectionhead>
+        <Fragment slot="title">Our model can learn about your store.</Fragment>
+        <Fragment slot="desc">Global data comparisons can enable our model to give you actionable insights. Simple actions which directly influence your top line.</Fragment>
+      </Sectionhead>
+    <Feature />
+    <Feature2 />
+    </Container>
+  </Layout>

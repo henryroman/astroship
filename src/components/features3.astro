@@ -1,0 +1,107 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+import Link from "@components/ui/link.astro";
+
+
+const features3 = [
+  {
+    title: "Integration",
+    description:
+      "Anavue allows you to integrate your existing POS technologies to create a centralized management hub for your retail store.",
+    icon: "uil:arrows-merge",
+    button: {
+      text: "Read more",
+      link: "#1",
+    }
+  },
+  {
+    title: "Enhanced Security and Management",
+    description:
+      "Anavue provides peace of mind by securing your store and preventing stockouts and overstock situations with real-time inventory updates.",
+    icon: "bx:bxs-shield-alt-2",
+    button: {
+      text: "Read more",
+      link: "#2",
+    }
+  },
+  {
+    title: "Advanced Video Analytics",
+    description:
+      "Increase customer satisfaction by understanding their behavior and preferences, leading to a more personalized shopping experience.",
+    icon: "bx:bxs-analyse",
+    button: {
+      text: "Read more",
+      link: "#3",
+    }
+  },
+  {
+    title: "Operational Efficiency",
+    description:
+      "Align staff schedules with peak shopping times through precise customer flow analysis, ensuring optimal customer service and reducing labor costs.",
+    icon: "bx:bxs-calendar-alt",
+    button: {
+      text: "Read more",
+      link: "#4",
+    }
+  },
+  {
+    title: "Our Model Can Learn About Your Store",
+    description:
+      "Global data comparisons can enable our model to give you actionable insights with simple actions that directly influence your top line.",
+    icon: "simple-icons:futurelearn",
+    button: {
+      text: "Read more",
+      link: "#5",
+    }
+  },
+  {
+    title: "Advanced Customer Insights",
+    description:
+      "Our model provides advanced customer segmentation to identify and group customers based on their shopping habits, allowing for targeted marketing campaigns.",
+    icon: "bx:bxs-network-chart",
+    button: {
+      text: "Read more",
+      link: "/featur",
+    }
+  },
+];
+---
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features3.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div class="flex flex-col">
+          <h3 class="font-semibold text-lg">{item.title}</h3>
+          <div class="flex items-center justify-between mt-2">
+          <p class="text-slate-500 mt-2 leading-relaxed flex-1">{item.description}</p>
+        </div>
+        <Link id="link"
+          href={item.button.link || "#"}
+          block
+          style= {item ? "primary" : "outline"}
+          class="mt-4 self-start">
+          {item.button.text || "Read more"}
+        </Link>
+      </div>
+    </div>
+    ))
+  }
+
+  <style>
+  #link{
+    background:white; color:black; border:1px solid black; font-weight: bold; max-width: 250px;
+  }
+
+  #link:hover{
+    background:black; color:white; border:1px solid white; font-weight: bold;
+  }
+
+
+
+
+
+  </style>
