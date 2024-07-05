@@ -12,7 +12,7 @@ const features3 = [
     icon: "uil:arrows-merge",
     button: {
       text: "Read more",
-      link: "#1",
+      link: "/features1",
     }
   },
   {
@@ -22,7 +22,7 @@ const features3 = [
     icon: "bx:bxs-shield-alt-2",
     button: {
       text: "Read more",
-      link: "#2",
+      link: "/features3",
     }
   },
   {
@@ -32,7 +32,7 @@ const features3 = [
     icon: "bx:bxs-analyse",
     button: {
       text: "Read more",
-      link: "#3",
+      link: "/features2",
     }
   },
   {
@@ -42,7 +42,7 @@ const features3 = [
     icon: "bx:bxs-calendar-alt",
     button: {
       text: "Read more",
-      link: "#4",
+      link: "/features2",
     }
   },
   {
@@ -52,7 +52,7 @@ const features3 = [
     icon: "simple-icons:futurelearn",
     button: {
       text: "Read more",
-      link: "#5",
+      href: "/features1",
     }
   },
   {
@@ -62,7 +62,7 @@ const features3 = [
     icon: "bx:bxs-network-chart",
     button: {
       text: "Read more",
-      link: "/featur",
+      href: "/features2",
     }
   },
 ];
@@ -79,13 +79,13 @@ const features3 = [
           <div class="flex items-center justify-between mt-2">
           <p class="text-slate-500 mt-2 leading-relaxed flex-1">{item.description}</p>
         </div>
-        <Link id="link"
-          href={item.button.link || "#"}
+        {/* <Link id="link"
+          href={item.button.href || "#"}
           block
           style= {item ? "primary" : "outline"}
           class="mt-4 self-start">
           {item.button.text || "Read more"}
-        </Link>
+        </Link> */}
       </div>
     </div>
     ))
