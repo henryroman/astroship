@@ -20,14 +20,9 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
+      <h2 style="display:flex; justify-content:center" class="font-bold text-3xl text-gray-800">
         Empowering the world with retail business intelligence.
       </h2>
-      <p class="text-lg leading-relaxed text-slate-500">
-        Empower your retail business with our advanced analytics and business intelligence solutions. Our journey began in the jewelry B2B sector, where we recognized the significant impact of personal customer relationships. This insight drove us to create a startup dedicated to enhancing these relationships through data-driven decisions.
-Our mission is to help retailers optimize employee hours and product placement, leveling the playing field between small retailers and large corporations. We believe in the mantra, “You show the customer love, we take care of the rest,” which reflects our commitment to delivering actionable insights for retail success.
-We value honesty, hard work, and putting customer needs first. These core values guide our integration of customer feedback into our product lifecycle, ensuring our solutions address real-world problems. Our unique approach combines deep learning-powered insights, actionable recommendations, employee performance integration, and seamless POS integration, distinguishing us in the market.
-      </p>
     </div>
     
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
@@ -47,7 +42,7 @@ We value honesty, hard work, and putting customer needs first. These core values
             </div>
 
             <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
+              <h2 style="font-weight: 600" class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
               <h3 class="text-sm text-slate-500">
                 {teamMemberEntry.data.title}
               </h3>
@@ -60,27 +55,22 @@ We value honesty, hard work, and putting customer needs first. These core values
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       <div class="group">
         <div class="mt-4 text-center">
-          <h2 class="text-lg text-gray-800">Bruno</h2>
           <p class="text-slate-500">
-            Bruno&#39;s extensive experience in forging strategic partnerships and driving business growth makes him a key asset to our team. With a robust background in establishing and nurturing relationships within the retail industry, Bruno understands the intricacies of collaboration and the importance of creating mutual value. His ability to identify and align with the right partners has been critical in expanding our market presence and enhancing our service offerings.
-
-            Bruno&#39;s keen insight into market trends and his adept negotiation skills enable us to secure partnerships that accelerate innovation and growth. His commitment to building strong, sustainable relationships ensures that our partnerships not only meet but exceed the expectations of all stakeholders involved. Bruno&#39;s role is pivotal in connecting our cutting-edge technology with retailers and partners who are equally passionate about leveraging data for smarter business decisions. His strategic mindset and collaborative approach drive the success of our partnerships, ultimately contributing to the achievement of our company&#39;s mission.
+            From his experience in building and maintaining partnerships, Bruno brings a deep understanding of business dynamics which enables him to build long-term partnerships successfully.
           </p>
         </div>
       </div>
       <div class="group">
         <div class="mt-4 text-center">
-          <h2 class="text-lg text-gray-800">George</h2>
           <p class="text-slate-500">
-            With extensive experience in supply side and stock management for jewelry retailers, George brings a deep understanding of retail challenges. His background in computer science has been instrumental in developing our innovative solutions. George&#39;s dedication to leveraging data for business intelligence drives our startup&#39;s vision and success.
+            From his experience in software-development, George brings a deep understanding of technology which enables him to build sophisticated solutions to real-world problems.
           </p>
         </div>
       </div>
       <div class="group">
         <div class="mt-4 text-center">
-          <h2 class="text-lg text-gray-800">Henry</h2>
           <p class="text-slate-500">
-            Henry&#39;s diverse background spans supply chain management for jewelry retailers and sustainability in food waste and fertilizer production. Growing up with a single mother running a struggling retail location, Henry witnessed the challenges small retailers face. His passion for technology and sustainability, combined with his personal experiences, fuels his dedication to empowering retailers through data-driven insights. Henry&#39;s expertise in deep learning and cloud computing is pivotal in advancing our product offerings and achieving our mission.
+            From his experience growing up as a part of a family-owned retail jewellery brand, Henry brings a deep understanding of retail challenges which enables him to guide product development.
           </p>
         </div>
       </div>

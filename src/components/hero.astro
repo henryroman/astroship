@@ -1,6 +1,6 @@
 ---
   import { Picture } from "astro:assets";
-  import myimage from "src/assets/mainheroformat.png";
+  import myimage from "C:/Users/augus/Documents/Anavue frontend/anavueWebsite/src/assets/homepageimage.png";
   import Link from "@components/ui/link.astro";
   import { Icon } from "astro-icon/components";
 ---
@@ -10,9 +10,10 @@
     <Picture 
     src= {myimage}
     alt="Video analytics prototype for Anavue"
-    height=424
+    sizes="(max-width: 900px) 200vw, 720px"
     loading="eager"
-    width = 520
+    widths={[300, 500, 700]}
+    style={{border: "2px solid black"}}
     />
    
 <!-- C:/Users/augus/Documents/Anavue frontend/anavueWebsite/src/assets/mainheroformat.png
