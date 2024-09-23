@@ -3,25 +3,12 @@ import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import logo from "https://i.ibb.co/yskhSQs/calamus-logo.png";
 
 const menuitems = [
   {
-    title: "Features",
-    path: "#",
-    children: [
-      { title: "POS Integration", path: "/integration" },
-      { title: "Business Intelligence", path: "/businessIntelligence" },
-      { title: "Deep learning", path: "/deepLearning" },
-      { title: "All-in-one", path: "/all-in-one" },
-    ],
-  },
-  {
-    title: "Demo",
-    path: "/demo",
-  },
-  {
-    title: "Pricing",
-    path: "/pricing",
+    title: "Menu",
+    path: "/strainList ",
   },
   {
     title: "About",
@@ -36,16 +23,24 @@ const menuitems = [
     path: "/contact",
   },
 ];
+
+import {webhook2} from "../../../config";
+import {webhook3} from "../../../config";
+
+const clonelink = await fetch(webhook3).then((response) => response.text());
+const teenlink = await fetch(webhook2).then((response) => response.text());
+
+const clonelink1 = "/" + clonelink
+const teenlink1 = "/" + teenlink
 ---
 
 <Container>
   <header class="flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
-      <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg"
-          ><span class="font-bold text-slate-800">Ana</span><span
-            class="text-slate-500">Vue</span
-          >
+      <div class="flex w-full lg:w-auto items-center justify-start">
+        <!-- Logo Section -->
+        <a href="/" class="text-lg flex items-center">
+          <img src="https://i.ibb.co/yskhSQs/calamus-logo.png" alt="Calamus Nursery Logo" class="h-12 w-auto" /> <!-- Adjust height as needed -->
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />
@@ -53,40 +48,29 @@ const menuitems = [
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
         <ul class="flex flex-col lg:flex-row lg:gap-3">
-          {
-            menuitems.map((item, index) => (
-              <>
-                {item.children && (
-                  <Dropdown
-                    title={item.title}
-                    children={item.children}
-                    lastItem={index === menuitems.length - 1}
-                  />
-                )}
-
-                {!item.children && (
-                  <li>
-                    <a
-                      href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
-                      <span> {item.title}</span>
-                    </a>
-                  </li>
-                )}
-              </>
-            ))
-          }
+          {menuitems.map((item, index) => (
+            <>
+              <li>
+                <a
+                  href={item.path}
+                  class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900"
+                >
+                  <span>{item.title}</span>
+                </a>
+              </li>
+            </>
+          ))}
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="portal.anavue.org" style="muted" block size="md">Log in</Link>
-          <Link href="portal.anavue.org" size="md" block>Sign up</Link>
+          <Link href="tel:+1-714-222-0114" block size="md">Call us</Link>
+          <Link href={teenlink1} download={teenlink} size="md" block>Menu </Link>
         </div>
       </MenuItems>
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <a href="portal.anavue.org">Log in</a>
-        <Link href="portal.anavue.org" size="md">Sign up</Link>
+        <a href="tel:+1-714-222-0114" style="font-weight: 800;">Call us</a>
+        <Link href="public/CalamusNurseryMenu.pdf" download="CalamusNurseryMenu.pdf" size="md">Menu</Link>
       </div>
     </div>
   </header>

@@ -1,5 +1,282 @@
-<footer class="my-20">
-  <p class="text-center text-sm text-slate-500">
-    Copyright © {new Date().getFullYear()} Anavue. All rights reserved.
-  </p>
+---
+const currentYear = new Date().getFullYear();
+
+import {webhook2} from "../../config";
+import {webhook3} from "../../config";
+
+const clonelink = await fetch(webhook3).then((response) => response.text());
+const teenlink = await fetch(webhook2).then((response) => response.text());
+
+const clonelink1 = "/" + clonelink
+const teenlink1 = "/" + teenlink
+---
+<div class="grid justify-items-center mt-48 mb-5">
+  <div class="card">
+    <span class="card__title">Newsletter</span>
+    <p class="card__content">
+      Get the best Cannabis menu in California delivered straight to your inbox once a month.
+    </p>
+    <form class="card__form"
+    action="https://api.web3forms.com/submit"
+    method="POST"
+    id="form"
+    class="needs-validation"
+    novalidate>
+    <input type="hidden" name="access_key" value="900382fd-4f3f-45bc-82da-0c67350cd3d0" />
+  <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
+      <input required type="email" placeholder="Your life" />
+      <button class="card__button">Click me</button>
+    </form>
+  </div>
+</div>
+
+<footer class="container mx-auto py-5 my-5 border-t mt-32 mb-20">
+  <!-- Grid changes based on screen size -->
+  <div class="grid grid-cols-1 gap-6 text-center md:grid-cols-2 lg:grid-cols-5">
+    <div class="mb-3 flex flex-col items-center">
+      <a href="/" class="text-lg flex items-center justify-center mb-4">
+        <img src="https://i.ibb.co/yskhSQs/calamus-logo.png" alt="Calamus Nursery Logo" class="h-12 w-auto" /> <!-- Adjust height as needed -->
+      </a>
+      <p class="text-gray-600 mt-6">Copyright © {currentYear} Calamus Nursery. All rights reserved.</p>
+      <p class="text-gray-600 mt-6">All Products Contain Less Than 0.3% Delta-9 THC Derived From Hemp And Are Not For Sale Or Use By Individuals Under 21.</p>
+      <p class="text-gray-600 mt-6">The FDA Has Not Evaluated These Products, And They Are Not Intended To Diagnose, Treat, Cure Or Prevent Any Disease. Our Plants Are Shipped At Under 0.3% THC, And Once They Leave Our Facility It Is The Customers Responsibility To Abide By All Laws.</p>
+      <a href="https://www.instagram.com/calamus_nursery/?hl=en" class="mt-4">
+        <button class="Btn">
+          <span class="svgContainer">
+            <svg fill="white" class="svgIcon" viewBox="0 0 448 512" height="1.5em" xmlns="http://www.w3.org/2000/svg">
+              <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+            </svg>
+          </span>
+          <span class="BG"></span>
+        </button>
+      </a>
+    </div>
+
+    <div class="mb-3"></div>
+
+    <div class="mb-3">
+      <h5 class="font-bold mb-3">Services</h5>
+      <ul class="flex flex-col">
+        <li class="mb-2"><a href="/" class="text-gray-600 hover:text-gray-900">Home</a></li>
+        <li class="mb-2"><a href="/strainList" class="text-gray-600 hover:text-gray-900">Strains</a></li>
+        <li class="mb-2"><a href={clonelink1} download={clonelink} class="text-gray-600 hover:text-gray-900">Clone   inventory</a></li>
+        <li class="mb-2"><a href={teenlink1} download={teenlink} class="text-gray-600 hover:text-gray-900">Teen inventory</a></li>
+        <li class="mb-2"><a href="/contact" class="text-gray-600 hover:text-gray-900">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-3">
+      <h5 class="font-bold mb-3">Find out more</h5>
+      <ul class="flex flex-col">
+        <li class="mb-2"><a href="/clones" class="text-gray-600 hover:text-gray-900">Clones</a></li>
+        <li class="mb-2"><a href="/teens" class="text-gray-600 hover:text-gray-900">Teens</a></li>
+        <li class="mb-2"><a href="/readytoflower" class="text-gray-600 hover:text-gray-900">Ready to flower plants</a></li>
+        <li class="mb-2"><a href="/readytoflower" class="text-gray-600 hover:text-gray-900">FAQs</a></li>
+        <li class="mb-2"><a href="/about" class="text-gray-600 hover:text-gray-900">Our Story</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-3">
+      <h5 class="font-bold mb-3">Notices</h5>
+      <ul class="flex flex-col">
+        <li class="mb-2"><a href="/legaldisclaimer" class="text-gray-600 hover:text-gray-900">Legal Disclaimer</a></li>
+        <li class="mb-2"><a href="/tnc" class="text-gray-600 hover:text-gray-900">Terms and Conditions</a></li>
+        <li class="mb-2"><a href="/privacypolicy" class="text-gray-600 hover:text-gray-900">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
 </footer>
+
+
+
+
+<style>
+  /* From Uiverse.io by vinodjangid07 */
+.Btn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  /* overflow: hidden; */
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+  transition: all .3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+}
+
+.BG {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  z-index: -1;
+  border-radius: 9px;
+  pointer-events: none;
+  transition: all .3s;
+}
+
+.Btn:hover .BG {
+  transform: rotate(35deg);
+  transform-origin: bottom;
+}
+
+.Btn:hover .svgContainer {
+  background-color: rgba(156, 156, 156, 0.466);
+}
+
+/* From Uiverse.io by 0xnihilism */
+.card {
+  width: 300px;
+  padding: 20px;
+  background: #fff;
+  border: 6px solid #000;
+  box-shadow: 12px 12px 0 #000;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 17px 17px 0 #000;
+}
+
+.card__title {
+  font-size: 32px;
+  font-weight: 900;
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.card__title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  height: 3px;
+  background-color: #000;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+
+.card:hover .card__title::after {
+  transform: translateX(0);
+}
+
+.card__content {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.card__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card__form input {
+  padding: 10px;
+  border: 3px solid #000;
+  font-size: 16px;
+  font-family: inherit;
+  transition: transform 0.3s;
+  width: calc(100% - 26px); /* Adjust for padding and border */
+}
+
+.card__form input:focus {
+  outline: none;
+  transform: scale(1.05);
+  background-color: #000;
+  color: #ffffff;
+}
+
+.card__button {
+  border: 3px solid #000;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+  left: 20%;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+  width: 50%;
+  height: 100%;
+}
+
+.card__button::before {
+  content: "Sure?";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 105%;
+  background-color: #5ad641;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+}
+
+.card__button:hover::before {
+  transform: translateY(0);
+}
+
+.card__button:active {
+  transform: scale(0.95);
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(2px, 2px);
+  }
+  25% {
+    transform: translate(-2px, -2px);
+  }
+  50% {
+    transform: translate(-2px, 2px);
+  }
+  75% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(2px, 2px);
+  }
+}
+
+.glitch {
+  animation: glitch 0.3s infinite;
+}
+</style>

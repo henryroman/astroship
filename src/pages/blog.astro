@@ -1,9 +1,40 @@
 ---
-import { getCollection } from "astro:content";
 import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+
+import { getCollection } from "astro:content";
+function getImageUrl(slug) {
+  switch (slug) {
+    case "Sherbzilla":
+      return "https://www.instagram.com/calamus_nursery/?hl=en";
+    case "ajo-blanco":
+      return "/Ajo Blanco.jpg";
+    case "amaretto-mintz":
+      return "../../public/Amaretto-Mintz.PNG";
+    case "black-bubblegum":
+      return "/Black Bubblegum.jpg";
+    case "black-trufflez":
+      return "/Black Trufflez.jpg";
+    case "buttafingerz":
+      return "/Buttafingerz.jpg";
+    case "cadillac-rainbowz":
+      return "/Cadillac Rainbowz.jpeg";
+    case "carbon-candy":
+      return "/Carbon Candy.jpg";
+    case "cherry-gass":
+      return "/Cherry Gass.png";
+    case "detroit-breath":
+      return "/Detroit Breath.jpeg";
+    case "glitterbomb":
+      return "../../public/Glitterbomb.JPG";
+    case "gush-mints":
+      return "/Gush-Mints.jpg";
+    default:
+      return null;
+  }
+}
 
 // Filter blog entries with 'draft: false' & date before current date
 const publishedBlogEntries = await getCollection("blog", ({ data }) => {
@@ -14,14 +45,17 @@ const publishedBlogEntries = await getCollection("blog", ({ data }) => {
 publishedBlogEntries.sort(function (a, b) {
   return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
 });
----
 
-<Layout title="Blog">
+const imageUrls = publishedBlogEntries.map((entry) => {
+  return getImageUrl(entry.slug);
+});
+---
+<Layout title="Blog" description="Explore the Calamus Nursery Blog for the latest news, DIY guides, and product updates. Stay informed about our partnerships with top breeders like Sherbzilla and 3rdCoastGenetics, and learn about our expanding menu of legendary cannabis strains. From press releases announcing new collaborations to DIY guides on growing cannabis clones, our blog is your go-to resource for cultivation tips and industry developments. Subscribe to our monthly newsletter for exclusive insights and the best cannabis menu in California.">
   <Container>
     <Sectionhead>
       <Fragment slot="title">Our Blog</Fragment>
       <Fragment slot="desc">
-        We write about the technology we are researching and trends in the retail space.
+        The latest DIY articles and news about our products.
       </Fragment>
     </Sectionhead>
     <main class="mt-16">
@@ -34,19 +68,19 @@ publishedBlogEntries.sort(function (a, b) {
                   <Picture
                     src={blogPostEntry.data.image.src}
                     alt={blogPostEntry.data.image.alt}
-                    sizes="(max-width: 800px) 100vw, 800px"
-                    width={800}
-                    height={600}
+                    sizes="(max-width: 768px) 100vw, 50vw, "
+                    height={300}
+                    width={500}
+                    class="w-full max-h-[300px] rounded-md object-cover object-center bg-white"
                     loading={index <= 2 ? "eager" : "lazy"}
                     decoding={index <= 2 ? "sync" : "async"}
-                    class="w-full rounded-md object-cover object-center bg-white"
                   />
                   <div>
                     <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
                       {blogPostEntry.data.category}
                     </span>
 
-                    <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
+                    <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1">
                       {blogPostEntry.data.title}
                     </h2>
 

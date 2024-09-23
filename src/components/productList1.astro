@@ -1,0 +1,213 @@
+---
+import { Fragment } from 'preact';
+
+// Define the Product interface
+interface Product {
+  name: string;
+  slug: string;
+  price: string;
+  image1: string;
+  image2: string;
+  image3: string;
+  image4: string;
+  description: string;
+  description2: string;
+  description3: string;
+  description4: string;
+  description5: string;
+  ClonePrice: string;
+  // Add other properties if necessary
+}
+
+// Initialize the products array and error state
+let products2: Product[] = [];
+let fetchError: string | null = null;
+
+// Define the webhook URL, ensure it's set in your environment variables
+import {webhook} from "../../config"
+
+try {
+  const response = await fetch(webhook);
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  const data = await response.json();
+  console.log('Fetched data:', data); // For debugging
+
+  if (Array.isArray(data)) {
+    products2 = data as Product[];
+  } else {
+    throw new Error('Fetched data is not an array');
+  }
+} catch (error: any) {
+  console.error('Error fetching products:', error);
+  fetchError = error.message;
+}
+
+// Helper functions using object maps instead of switch statements
+function getImageUrl(slug: string): string | null {
+  const imageMap: { [key: string]: string } = {
+    "12-12": "/12-12.jpg",
+    "beach-body": "/Beach Body.jpg",
+    "ajo-blanco": "/Ajo Blanco.jpg",
+    "amaretto-mintz": "/Amaretto-Mintz.PNG",
+    "black-bubblegum": "/Black Bubblegum.jpg",
+    "guava": "/Guava2.JPG",
+    "black-trufflez": "/Black Trufflez.jpg",
+    "buttafingerz": "/Buttafingerz.jpg",
+    "cadillac-rainbowz": "/Cadillac Rainbowz.jpeg",
+    "carbon-candy": "/Carbon Candy.jpg",
+    "cherry-gass": "/Cherry Gass.png",
+    "detroit-breath": "/Detroit Breath.jpeg",
+    "glitterbomb": "/Glitterbomb.JPG",
+    "gush-mints": "/Gush-Mints.jpg",
+    "key-lime-jack": "/Key Lime Jack.jpg",
+    "lcg": "/Lemon Cherry Gelato.jpg",
+    "og-18": "/OG18.jpg",
+    "oreoz": "/Oreoz.JPG",
+    "paradise-snacks": "/Paradise Snacks.jpeg",
+    "permanent-cherries": "/Permanent Cherries.jpg",
+    "permanent-marker": "/Permanent Marker.jpg",
+    "permanent-push-pop": "/Permanent push Pop.jpeg",
+    "pink-runtz": "/Pink-runtz.jpg",
+    "pixey-stick": "/Pixey Stick.jpeg",
+    "pure-michigan": "/Pure Michigan.JPG",
+    "runtz": "/Runtz.WEBP",
+    "scented-marker": "/Scented Marker.JPG",
+    "taffy-twist": "/Taffy Twist.jpeg",
+    "zoap": "/Zoap.jpeg",
+    "bacio-gelato": "/Bacio_Gelato.jpg",
+    // Add other mappings as needed
+  };
+
+  return imageMap[slug] || null;
+}
+
+function getLogoUrl(slug: string): string | null {
+  const logoMap: { [key: string]: string } = {
+    "bacio-gelato": "/sherbzilla.png",
+    "guava": "/sherbzilla.png",
+    "ajo-blanco": "/Happy-Dreams-Genetics.png",
+    "cherry-gass": "/Happy-Dreams-Genetics.png",
+    "key-lime-jack": "/Happy-Dreams-Genetics.png",
+    "12-12": "/popslogo.png",
+    "paradise-snacks": "/crosseslogo.png",
+    "beach-body": "/popslogo.png",
+  };
+
+  return logoMap[slug] || null;
+}
+---
+
+<!-- Loading Screen -->
+<div id="loading-screen" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+  <div class="flex-col gap-4 w-full flex items-center justify-center">
+    <div class="w-28 h-28 border-8 text-black-400 text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-blue-400 rounded-full">
+      <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em" class="animate-ping">
+        <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div id="page-content" class="hidden">
+  <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+    <h2 style="text-align: center; font-size: xxx-large; font-weight: bold;">Strain List</h2>
+  </div>
+
+  <div class="bg-white">
+    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+      <h2 class="sr-only">Products</h2>
+        <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          {products2.length > 0 ? (
+            products2.map((product2) => {
+              const imageUrl = getImageUrl(product2.slug);
+              const logoUrl = getLogoUrl(product2.slug);
+
+              return (
+                <a href={`/products/${product2.slug}`} class="group" key={product2.slug}>
+                  <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
+                    {imageUrl ? (
+                      <img
+                        src={imageUrl}
+                        loading="eager"
+                        alt={product2.description}
+                        class="h-full w-full object-cover object-center group-hover:opacity-75"
+                      />
+                    ) : (
+                      <span>No Image Available</span>
+                    )}
+                  </div>
+                  <div class="mt-4 flex items-center">
+                    <h3 class="text-gray-700" style="font-size: 20px; font-weight: bold;">{product2.name}</h3>
+                    {logoUrl && (
+                      <img
+                        src={logoUrl}
+                        alt={`${product2.name} logo`}
+                        class={`ml-2 w-12 h-12 object-contain ${
+                          logoUrl.includes("Happy-Dreams-Genetics.png") ? "bg-black" : ""
+                        }`}
+                      />
+                    )}
+                  </div>
+                  <p class="mt-1 text-lg font-sm text-gray-900">{product2.description5}</p>
+                </a>
+              );
+            })
+          ) : (
+            <p class="text-center text-gray-500">No products available.</p>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+</div>
+
+<!-- JS for loading logic -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll("img");
+    const totalImages = images.length;
+    let imagesLoaded = 0;
+
+    function hideLoadingScreen() {
+      const loadingScreen = document.getElementById("loading-screen");
+      const pageContent = document.getElementById("page-content");
+
+      // Only hide the loading screen and show the page content if both elements exist
+      if (loadingScreen && pageContent) {
+        loadingScreen.style.display = "none";
+        pageContent.classList.remove("hidden");
+      }
+    }
+
+    if (totalImages === 0) {
+      hideLoadingScreen();
+    } else {
+      images.forEach((image) => {
+        if (image.complete) {
+          imagesLoaded++;
+          if (imagesLoaded === totalImages) {
+            hideLoadingScreen();
+          }
+        } else {
+          image.addEventListener("load", () => {
+            imagesLoaded++;
+            if (imagesLoaded === totalImages) {
+              hideLoadingScreen();
+            }
+          });
+          image.addEventListener("error", () => {
+            imagesLoaded++;
+            if (imagesLoaded === totalImages) {
+              hideLoadingScreen();
+            }
+          });
+        }
+      });
+    }
+  });
+</script>

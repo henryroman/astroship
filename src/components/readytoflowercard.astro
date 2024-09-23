@@ -1,0 +1,100 @@
+
+
+<!-- Ready to Flower Section -->
+<div id="loading-screen" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+  <div class="flex-col gap-4 w-full flex items-center justify-center">
+    <div class="w-28 h-28 border-8 text-blue-400 text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-blue-400 rounded-full">
+      <!-- Loading Spinner SVG -->
+      <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em" class="animate-ping">
+        <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- Main content, hidden initially -->
+<div id="page-content" class="hidden">
+  <!-- Ready to Flower Section -->
+  <div class="mx-auto max-w-2xl px-4 py-12 sm:px-6 lg:max-w-7xl lg:px-8 mt-8">
+    <div class="flex flex-col lg:flex-row gap-8">
+      <!-- Image on the left for larger screens -->
+      <div class="lg:w-1/2 flex justify-center">
+        <img src="/readytoflower2.jpg" alt="Ready to Flower" class="rounded-lg w-full lg:max-w-lg" />
+      </div>
+      <!-- Text Content -->
+      <div class="lg:w-1/2">
+        <h2 class="text-center lg:text-left text-3xl font-bold mb-6">READY TO FLOWER</h2>
+        <p class="text-gray-700 mb-4">
+          Ready to Flower plants are designed to streamline your cultivation process and maximize efficiency. Standing at 18+ inches tall and grown in 1 gallon or 2 gallon coco soil pots, these robust plants come fully rooted and primed for an immediate transition to the flowering stage.
+        </p>
+        <div class="grid gap-4">
+          <!-- Summary Cards -->
+          <div class="bg-gray-100 p-4 rounded-lg shadow">
+            <h3 class="font-semibold">18+ Ready to Flower</h3>
+            <p class="text-gray-600">Fully rooted in 1 gallon or 2 gallon coco soil pots, topped once or twice with 6-8 branches, optimized for an immediate transition to the flowering stage.</p>
+          </div>
+          <div class="bg-gray-100 p-4 rounded-lg shadow">
+            <h3 class="font-semibold">Time-Saving Solution</h3>
+            <p class="text-gray-600">Skip the propagation and vegetative stages, saving valuable time and resources in your facility.</p>
+          </div>
+          <div class="bg-gray-100 p-4 rounded-lg shadow">
+            <h3 class="font-semibold">High-Quality Growth</h3>
+            <p class="text-gray-600">Grown to ensure a smooth transition to flowering with consistent, vigorous yields every cycle.</p>
+          </div>
+        </div>
+        <!-- Contact Button -->
+        <div class="mt-8 text-center">
+          <p class="mb-4">Standing at 18+ inches tall, these robust plants come fully rooted and primed for an immediate transition to the flowering stage</p>
+          <button class="bg-black text-white px-6 py-2 rounded-md mt-4 font-semibold"><a href="/strainList"> Strain List</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Other Services Section -->
+  <div class="mx-auto max-w-2xl px-4 py-12 sm:px-6 lg:max-w-7xl lg:px-20 lg:mt-20">
+    <h2 class="text-center text-2xl font-bold mb-8">OTHER SERVICES</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Clones Service -->
+      <div class="rounded-lg overflow-hidden shadow-lg">
+        <a href="/clones">
+          <div class="w-full h-64 flex items-center justify-center">
+            <img src="/clonespurple.jpg" alt="Clones" class="max-w-full max-h-full object-contain rounded" />
+          </div>
+          <div class="p-4 text-center">
+            <h3 class="font-semibold text-lg">CLONES</h3>
+          </div>
+        </a>
+      </div>
+      <!-- Teens Service -->
+      <div class="rounded-lg overflow-hidden shadow-lg">
+        <a href="/teens">
+          <div class="w-full h-64 flex items-center justify-center">
+            <img src="/teenshand.jpg" alt="Teens" class="max-w-full max-h-full object-contain rounded" />
+          </div>
+          <div class="p-4 text-center">
+            <h3 class="font-semibold text-lg">TEENS</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      function hideLoadingScreen() {
+        const loadingScreen = document.getElementById('loading-screen');
+        const pageContent = document.getElementById('page-content');
+
+        if (loadingScreen && pageContent) {
+          loadingScreen.style.display = 'none';
+          pageContent.classList.remove('hidden');
+        }
+      }
+
+      // Call the function to hide the loading screen
+      hideLoadingScreen();
+    });
+  </script>

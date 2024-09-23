@@ -1,81 +1,48 @@
 ---
-import { getCollection } from "astro:content";
 import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-
-const { align = "center" } = Astro.props;
-// Filter team entries with &#39;draft: false&#39; & date before current date
-const publishedTeamMembers = await getCollection("team", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
-});
 ---
-
-<Layout title="About">
+<Layout title="About Us" description="Discover Calamus Nursery, California's premier source for high-quality cannabis plants and genetics. With a mission to provide cultivators with clean, premium genetics, we partner with leading breeders like Sherbzilla, 3rdCoastGenetics, and Council Collective. Our expertise in cultivation, combined with a commitment to plant health and quality, ensures superior flower for today's competitive market. From breeder-verified cuts to advanced integrated pest management, we offer exceptional plants tailored for success.">
   <Container>
     <Sectionhead>
       <Fragment slot="title">About Us</Fragment>
-      <Fragment slot="desc">Meet the Anavue Team</Fragment>
+      <Fragment slot="desc">Nice to meet you!</Fragment>
     </Sectionhead>
 
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 style="display:flex; justify-content:center" class="font-bold text-3xl text-gray-800">
-        Empowering the world with retail business intelligence.
+    <div class="flex flex-col gap-8 mx-auto max-w-4xl mt-16">
+      <!-- Introduction Section -->
+      <h2 class="font-bold text-3xl text-gray-800 text-center">
+        Welcome to Calamus Nursery, California's premier destination for high-quality cannabis plants, exceptional genetics, and innovative growing solutions.
       </h2>
-    </div>
-    
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
-      {
-        publishedTeamMembers.map((teamMemberEntry) => (
-          <div class="group">
-            <div class="w-full aspect-square">
-              <Picture
-                src={teamMemberEntry.data.avatar.src}
-                alt={teamMemberEntry.data.avatar.alt}
-                sizes="(max-width: 800px) 100vw, 400px"
-                width={400}
-                height={400}
-                loading = "eager"
-                
-              />
-            </div>
 
-            <div class="mt-4 text-center">
-              <h2 style="font-weight: 600" class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
-              <h3 class="text-sm text-slate-500">
-                {teamMemberEntry.data.title}
-              </h3>
-            </div>
-          </div>
-        ))
-      } 
+      <!-- Our Story Section -->
+      <section class="mt-12">
+        <h3 class="font-bold text-2xl text-gray-800 mb-4">Our Story</h3>
+        <p class="text-slate-500">
+          Calamus Nursery was founded with a mission to provide cultivators with clean, verified premium genetics, backed by decades of experience and a commitment to quality. Partnering with industry-leading breeders like Sherbzilla, 3rdCoastGenetics, Council Collective, and their subsidiary genetics brands: Pops & Crxsses, we offer exclusive, breeder-verified cuts that guarantee healthy, high-performing plants. Our focus on integrity and plant health, combined with expert guidance from Council Collective, sets us apart in the cannabis industry. We’re not just a nursery—we’re a partner in your success, dedicated to providing the best genetics to help you thrive.
+        </p>
+      </section>
+
+      <!-- Our Mission Section -->
+      <section class="mt-12">
+        <h3 class="font-bold text-2xl text-gray-800 mb-4">Our Mission</h3>
+        <p class="text-slate-500">
+          At Calamus Nursery, our mission is simple: to provide cultivators with clean, premium cannabis plants that are bred for success. We are dedicated to offering the best supply of cannabis clones for your budget because we know firsthand how challenging it can be to find quality clones. Our commitment goes beyond genetics—we maintain healthy plants, build strong relationships with our clients, and ensure their success by continuously advancing our techniques and focusing on quality control. We also offer tours for interested farms and are happy to share all aspects of our integrated pest management program. By doing so, we help cultivators grow superior flower that meets the demands of today’s competitive cannabis market.
+        </p>
+      </section>
+
+      <!-- Our Expertise Section -->
+      <section class="mt-12 mb-60">
+        <h3 class="font-bold text-2xl text-gray-800 mb-4">Our Expertise</h3>
+        <p class="text-slate-500">
+          With years of experience in cannabis cultivation, Calamus Nursery combines in-house knowledge with the extensive expertise of our partners, including Council Collective. Council Collective is a team of dedicated crop coaches and agricultural consultants who work closely with us to ensure that our cultivation practices are the best in the industry. Their expertise allows us to continuously refine our processes and offer plants that are healthy, resilient, and consistently high-performing.
+        </p>
+        <p class="text-slate-500 mt-6">
+          Our partnership with top breeders like Sherbzilla, 3rdCoastGenetics, Happy Dream Genetics, Council Collective, and their subsidiary genetics brands: Pops & Crxsses ensures that our clients have access to exclusive, breeder-verified genetics. These strains are carefully selected to meet the demands of today's market, offering exceptional potency, flavor, and yield. Whether you’re growing indoors, outdoors, or in a greenhouse, our plants are bred to thrive in any environment.
+        </p>
+      </section>
     </div>
-    
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
-      <div class="group">
-        <div class="mt-4 text-center">
-          <p class="text-slate-500">
-            From his experience in building and maintaining partnerships, Bruno brings a deep understanding of business dynamics which enables him to build long-term partnerships successfully.
-          </p>
-        </div>
-      </div>
-      <div class="group">
-        <div class="mt-4 text-center">
-          <p class="text-slate-500">
-            From his experience in software-development, George brings a deep understanding of technology which enables him to build sophisticated solutions to real-world problems.
-          </p>
-        </div>
-      </div>
-      <div class="group">
-        <div class="mt-4 text-center">
-          <p class="text-slate-500">
-            From his experience growing up as a part of a family-owned retail jewellery brand, Henry brings a deep understanding of retail challenges which enables him to guide product development.
-          </p>
-        </div>
-      </div>
-    </div>
-    
-    
   </Container>
 </Layout>

@@ -3,28 +3,19 @@ import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
+import preact from '@astrojs/preact';
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://anavue.org",
   base: "/",
-  integrations: [tailwind(), mdx(), sitemap(), icon()],
-  pages: [
-    {
-      path: "/features1",
-      component: "src/components/featuresIntegration2.astro"
+  integrations: [tailwind(), mdx(), sitemap(), icon(), preact()],
+  vite: {
+    ssr: {
+      noExternal: ['@astrojs/'],
     },
-    {
-      path: "/features2",
-      component: "src/components/featuresbi2.astro"
+    define: {
+      'process.env.PUBLIC_WEBHOOK_URL': JSON.stringify(process.env.PUBLIC_WEBHOOK_URL),
+      'process.env.WEBHOOK_URL': JSON.stringify(process.env.WEBHOOK_URL),
     },
-    {
-      path: "/features3",
-      component: "src/components/featuresLearning2.astro"
-    },
-    {
-      path: "/features4",
-      component: "src/components/features3.astro"
-    },
-  ]
+  },
 });

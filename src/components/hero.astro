@@ -1,55 +1,123 @@
 ---
-  import { Picture } from "astro:assets";
-  import myimage from "C:/Users/augus/Documents/Anavue frontend/anavueWebsite/src/assets/homepageimage.png";
-  import Link from "@components/ui/link.astro";
-  import { Icon } from "astro-icon/components";
+import { Picture } from "astro:assets";
+import myimage from "../../public/heroimages.jpg";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon/components";
+import {webhook2} from "../../config";
+import {webhook3} from "../../config";
+
+const clonelink = await fetch(webhook3).then((response) => response.text());
+const teenlink = await fetch(webhook2).then((response) => response.text());
+
+const clonelink1 = "/" + clonelink
+const teenlink1 = "/" + teenlink
 ---
+<style>
+  /* Dropdown container */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
 
-<main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
-    <Picture 
-    src= {myimage}
-    alt="Video analytics prototype for Anavue"
-    sizes="(max-width: 900px) 200vw, 720px"
-    loading="eager"
-    widths={[300, 500, 700]}
-    style={{border: "2px solid black"}}
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 160px;
+    z-index: 1;
+  }
+
+  /* Show the dropdown */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Dropdown button styling */
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+</style>
+
+<main class="grid lg:grid-cols-2 place-items-center pt-46 pb-8 md:pt-20 md:pb-44 lg:pb">
+  <div class="py-6 md:order-1 hidden md:block ml-6 md:ml-0">
+    <Picture
+      src={myimage}
+      alt="Nursery filled with teen and adult cannabis plants"
+      sizes="(max-width: 900px) 200vw, 720px"
+      loading="eager"
+      widths={[800, 1000, 1200]}
+      style={"border-radius: 25px;"}
     />
-   
-<!-- C:/Users/augus/Documents/Anavue frontend/anavueWebsite/src/assets/mainheroformat.png
-    widths={[200, 400, 600]}
-    sizes="(max-width: 800px) 100vw, 620px" -->
   </div>
 
- 
-  </div>
   <div>
-    <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Make every camera count
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight lg:tracking-tighter mt-0 sm:mt-0 lg:mt-0 px-4 lg:px-0">
+      Huge harvests everytime
     </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Video surveillance software made easy for family-owned jewellery stores. We analyse your video footage for customer counts, conversion rates and more.
+    <p class="text-base sm:text-lg mt-4 text-slate-600 max-w-xl px-4 lg:px-0">
+      The highest quality cannabis teens and clones ready to flip in 8 weeks.
     </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        href="/all-in-one"
-        target="_self"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
+    <div class="mt-6 flex flex-col sm:flex-row gap-3 px-4 lg:px-0">
+      <!-- Dropdown Container -->
+      <div class="dropdown">
+        <Link
+          target="_self"
+          class="flex gap-1 items-center justify-center px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-all"
+          rel="noopener"
+          href="#"
+        >
+          Download our menu
+        </Link>
+        <!-- Dropdown Content -->
+        <div class="dropdown-content">
+          <Link
+            href={teenlink1}
+            download={teenlink}
+            class="flex gap-1 items-center px-4 py-2"
+          >
+            Teen Menu
+          </Link>
+          <Link
+            href={clonelink1}
+            download={clonelink}
+            class="flex gap-1 items-center px-4 py-2"
+          >
+            Clone Menu
+          </Link>
+        </div>
+      </div>
 
-         Find out more 
-      </Link>
       <Link
         size="lg"
-        style="outline"
+        class="flex gap-1 items-center justify-center px-6 py-2 border border-gray-300 rounded-md hover:border-gray-400 transition-all"
         rel="noopener"
-        href="/contact"
-        class="flex gap-1 items-center justify-center"
-        target="_self">
-         Book a call
+        href="tel:+1-714-222-0114"
+        target="_self"
+      >
+        Call our team
       </Link>
     </div>
+    <ul class="mt-10 px-4 lg:px-0 space-y-2">
+      <li>
+        <Icon name="simple-icons:ticktick" class="w-5 h-5 inline-block text-green-600" />
+        Zero-Generation Tissue Clones
+      </li>
+      <li>
+        <Icon name="simple-icons:ticktick" class="w-5 h-5 inline-block text-green-600" />
+        2 Gallon Pots
+      </li>
+      <li>
+        <a href="/blog">
+          <Icon name="simple-icons:ticktick" class="w-5 h-5 inline-block text-green-600" />
+          Breeder certified genetics
+        </a>
+      </li>
+    </ul>
   </div>
 </main>
-

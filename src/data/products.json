@@ -1,0 +1,452 @@
+[
+  {
+    "slug": "12-12",
+    "name": "12:12 (Sativa)",
+    "price": "$48",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 35%",
+    "description5": "Gas, Sweet, Cream, Slightly purple",
+    "description": " London Pound Cake x OG Fruit Smoothie",
+    "images": [
+      "/12-12.jpg",
+      "/Glitterbomb-pre-teen.jpg",
+      "/12-12-clone.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "ajo-blanco",
+    "name": "Ajo Blanco (Indica)",
+    "price": "$35",
+    "description2": "9-10 Weeks",
+    "description3": "High Yielder",
+    "description4": "Average THC 30%",
+    "description5": "Sweet, Garlic, Citrus, Green",
+    "description": "Garlic Pancakes x Vanilla Cheesecake",
+    "images": [
+      "/Ajo Blanco.jpg",
+      "/Glitterbomb-pre-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "amaretto-mintz",
+    "name": "Amaretto Mintz (Hybrid)",
+    "price": "$89",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 28%",
+    "description5": "Sweet, Berry, Minty, Slightly purple",
+    "description": "Cherry Punch x Animal Mintz",
+    "images": [
+      "/Amaretto-Mintz.PNG",
+      "/amaretto-mintz-clone.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "bacio-gelato",
+    "name": "Bacio Gelato (Hybrid)",
+    "price": "$35",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 30%",
+    "description5": "Berry, Creamy, Citrusy, Hints of purple",
+    "description": "Sunset Sherbet x Thin Mint GSC",
+    "images": [
+      "/Bacio-Gelato.jpg",
+      "/bacio-gelato-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "black-bubblegum",
+    "name": "Black Bubblegum (Indica)",
+    "price": "$35",
+    "description2": "8-9 Weeks",
+    "description3": "High Yielder",
+    "description4": "Average THC 33%",
+    "description5": "Candy, Citrusy, Gas, Purple",
+    "description": "Spritzer x Horchata",
+    "images": [
+      "/Black Bubblegum.jpg",
+      "/Glitterbomb-pre-teen.jpg",
+      "/black-bubblegum-horatio-clone.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "carbon-candy",
+    "name": "Carbon Candy (Hybrid)",
+    "price": "$35",
+    "description2": "9-10 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 30%",
+    "description5": "Candy, Fruity, Gas, Purple",
+    "description": "Carbon Fiber x Gushers",
+    "images": [
+      "/Carbon Candy.jpg",
+      "/carbon-candy-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/Carbon-Candy-pre-teen.jpg"
+    ]
+  },
+  {
+    "slug": "cherry-gass",
+    "name": "Cherry Gass (Indica)",
+    "price": "$48",
+    "description2": "8-9 Weeks",
+    "description3": "High Yielder",
+    "description4": "Average THC 30%",
+    "description5": "Sweet, Cherry, Gassy, Dark Green",
+    "description": "(Triple OG x Humboldt Gelato) x Cherry Frosting",
+    "images": [
+      "/Cherry Gass.png",
+      "/glitterbomb-clone.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "key-lime-jack",
+    "name": "Key Lime Jack (Indica)",
+    "price": "$35",
+    "description2": "9-10 Weeks",
+    "description3": "High Yielder",
+    "description4": "Average THC 28%",
+    "description5": "Sweet, Sour, Skunky, Green",
+    "description": "Bling Cheesecake x Jack Herer",
+    "images": [
+      "/Key Lime Jack.jpg",
+      "/glitterbomb-clone.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "paradise-snacks",
+    "name": "Paradise Snacks (Indica)",
+    "price": "$48",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 42%",
+    "description5": "Candy, Berry, Pine, Slightly purple",
+    "description": "Runtz Mints 50 x OG Fruit Smoothie",
+    "images": [
+      "/Paradise Snacks.jpeg",
+      "/Glitterbomb-pre-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "permanent-cherries",
+    "name": "Permanent Cherries (Indica)",
+    "price": "$35",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 30%",
+    "description5": "Candy, Fruity, Gas, Slightly purple",
+    "description": "Lemon Cherry Gelato x Kush Mints bx1 x Permanent Marker",
+    "images": [
+      "/Permanent Cherries.jpg",
+      "/Glitterbomb-pre-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "permanent-marker",
+    "name": "Permanent Marker (Indica)",
+    "price": "$89",
+    "description2": "8-9 Weeks",
+    "description3": "High Yielder",
+    "description4": "Average THC 30%",
+    "description5": "Candy, Gelato, Gas, Purple",
+    "description": "Biscotti x Jealousy x Sherbet bx",
+    "images": [
+      "/Permanent Marker.jpg",
+      "/Permanent Marker-pre-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "lcg",
+    "name": "Lemon Cherry Gelato (Indica)",
+    "price": "$35",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 28%",
+    "description5": "Candy, Berry, Gassy, Hints of purple",
+    "description": "(Zkittlez x Gelato 41) x (Gelato 33 x LPC)",
+    "images": [
+      "/Lemon Cherry Gelato.jpg",
+      "/Glitterbomb-pre-teen.jpg",
+      "/lemon-cherry-gelato-clone.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "zoap",
+    "name": "Zoap (Hybrid)",
+    "price": "$48",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 28%",
+    "description5": "Fruity, Creamy, Skunky, Purple",
+    "description": "Pink Guava #16 X Rainbow Sherbet",
+    "images": [
+      "/Zoap.jpeg",
+      "/zoap-teen-even-bigger.jpg",
+      "/zoap-clone.jpg",
+       "/zoap-teen.jpg"
+    ]
+  },
+  {
+    "slug": "runtz",
+    "name": "Runtz (Hybrid)",
+    "price": "$35",
+    "description2": "8-9 Weeks",
+    "description3": "Medium Yielder",
+    "description4": "Average THC 28%",
+    "description5": "Candy, Fruity, Gas, Slightly purple",
+    "description": "Zkittlez x Gelato",
+    "images": [
+      "/Runtz.WEBP",
+      "/runtz-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/runtz-huge-teen.jpg"
+    ]
+  },
+  {
+    "slug": "scented-marker",
+    "name": "Scented Marker (Indica)",
+    "price": "$89",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 30%",
+    "description5": "Candy, Tropical, Gas, Green",
+    "description": "Pineapple Fuzz X Permanent Marker",
+    "images": [
+      "/scented-marker.jpg",
+      "/scented-marker-teen.jpg",
+      "/xenon-clone-better.jpg",
+            "/scented-marker-huge-teen.jpg"
+
+    ]
+  },
+  {
+    "slug": "black-trufflez",
+    "name": "Black Trufflez",
+    "price": "$48",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 35%",
+    "description5": "Gas, Sweet, Cream, Slightly purple",
+    "description": "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
+    "images": [
+      "/Black Trufflez.jpg",
+      "/Glitterbomb-pre-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "buttafingerz",
+    "name": "Buttafingerz",
+    "price": "$35",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 35%",
+    "description5": "Gas, Sweet, Cream, Slightly purple",
+    "description": "Olive drab green insulated bottle with flared screw lid and flat top.",
+    "images": [
+      "/Buttafingerz.jpg",
+      "/Glitterbomb-pre-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "cadillac-rainbowz",
+    "name": "Cadillac Rainbowz",
+    "price": "$89",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 35%",
+    "description5": "Gas, Sweet, Cream, Slightly purple",
+    "description": "Person using a pen to cross a task off a productivity paper card.",
+    "images": [
+      "/Cadillac Rainbowz.jpeg",
+      "/Glitterbomb-pre-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "detroit-breath",
+    "name": "Detroit Breath",
+    "price": "$35",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 35%",
+    "description5": "Gas, Sweet, Cream, Slightly purple",
+    "description": "Olive drab green insulated bottle with flared screw lid and flat top.",
+    "images": [
+      "/Detroit Breath.jpeg",
+      "/Glitterbomb-pre-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "glitterbomb",
+    "name": "Glitterbomb",
+    "price": "$89",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 35%",
+    "description5": "Gas, Sweet, Cream, Slightly purple",
+    "description": "Person using a pen to cross a task off a productivity paper card.",
+    "images": [
+      "/Glitterbomb.JPG",
+      "/Glitterbomb-pre-teen.jpg",
+      "/glitterbomb-clone.jpg",
+            "/glitterbomb-teen.jpg"
+
+    ]
+  },
+  {
+    "slug": "gush-mints",
+    "name": "Gush Mints",
+    "price": "$35",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 35%",
+    "description5": "Gas, Sweet, Cream, Slightly purple",
+    "description": "Hand holding black machined steel mechanical pencil with brass tip and top.",
+    "images": [
+      "/Gush-Mints.jpg",
+      "/Glitterbomb-pre-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "og-18",
+    "name": "OG-18",
+    "price": "$89",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 35%",
+    "description5": "Gas, Sweet, Cream, Slightly purple",
+    "description": "Person using a pen to cross a task off a productivity paper card.",
+    "images": [
+      "/OG18.jpg",
+      "/Glitterbomb-pre-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "oreoz",
+    "name": "Oreoz",
+    "price": "$35",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 35%",
+    "description5": "Gas, Sweet, Cream, Slightly purple",
+    "description": "Hand holding black machined steel mechanical pencil with brass tip and top.",
+    "images": [
+      "/Oreoz.JPG",
+      "/Glitterbomb-pre-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "permanent-push-pop",
+    "name": "Permanent Push Pop",
+    "price": "$35",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 35%",
+    "description5": "Gas, Sweet, Cream, Slightly purple",
+    "description": "Hand holding black machined steel mechanical pencil with brass tip and top.",
+    "images": [
+      "/Permanent push Pop.jpeg",
+      "/Glitterbomb-pre-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "pink-runtz",
+    "name": "Pink Runtz",
+    "price": "$48",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 35%",
+    "description5": "Gas, Sweet, Cream, Slightly purple",
+    "description": "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
+    "images": [
+      "/Pink-runtz.jpg",
+      "/Glitterbomb-pre-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "pixey-stick",
+    "name": "Pixey Stick",
+    "price": "$35",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 35%",
+    "description5": "Gas, Sweet, Cream, Slightly purple",
+    "description": "Olive drab green insulated bottle with flared screw lid and flat top.",
+    "images": [
+      "/Pixey Stick.jpeg",
+      "/Glitterbomb-pre-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "pure-michigan",
+    "name": "Pure Michigan",
+    "price": "$89",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 35%",
+    "description5": "Gas, Sweet, Cream, Slightly purple",
+    "description": "Person using a pen to cross a task off a productivity paper card.",
+    "images": [
+      "/Pure Michigan.JPG",
+      "/Glitterbomb-pre-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  },
+  {
+    "slug": "taffy-twist",
+    "name": "Taffy Twist",
+    "price": "$35",
+    "description2": "8-9 Weeks",
+    "description3": "Medium/High Yielder",
+    "description4": "Average THC 35%",
+    "description5": "Gas, Sweet, Cream, Slightly purple",
+    "description": "Hand holding black machined steel mechanical pencil with brass tip and top.",
+    "images": [
+      "/Taffy Twist.jpeg",
+      "/Glitterbomb-pre-teen.jpg",
+      "/xenon-clone-better.jpg",
+      "/gelato-33-teen.jpg"
+    ]
+  }
+]

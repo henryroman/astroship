@@ -2,8 +2,38 @@
 import Container from "@components/container.astro";
 import { getFormattedDate } from "@utils/all";
 import Layout from "./Layout.astro";
-
 const { frontmatter } = Astro.props;
+
+function getImageUrl(slug) {
+  switch (slug) {
+    case "Sherbzilla":
+      return "https://i.ibb.co/SwhK6WR/Cadillac-Rainbowz.jpg";
+    case "ajo-blanco":
+      return "/Ajo Blanco.jpg";
+    case "amaretto-mintz":
+      return "../../public/Amaretto-Mintz.PNG";
+    case "black-bubblegum":
+      return "/Black Bubblegum.jpg";
+    case "black-trufflez":
+      return "/Black Trufflez.jpg";
+    case "buttafingerz":
+      return "/Buttafingerz.jpg";
+    case "cadillac-rainbowz":
+      return "/Cadillac Rainbowz.jpeg";
+    case "carbon-candy":
+      return "/Carbon Candy.jpg";
+    case "cherry-gass":
+      return "/Cherry Gass.png";
+    case "detroit-breath":
+      return "/Detroit Breath.jpeg";
+    case "glitterbomb":
+      return "../../public/Glitterbomb.JPG";
+    case "gush-mints":
+      return "/Gush-Mints.jpg";
+    default:
+      return null;
+  }
+}
 ---
 
 <Layout title={frontmatter.title}>
@@ -36,6 +66,7 @@ const { frontmatter } = Astro.props;
     </div>
 
     <div class="mx-auto prose prose-lg mt-6">
+      <img src={getImageUrl(frontmatter.slug)} alt={frontmatter.slug || 'Cherry Gass'}>
       <slot />
     </div>
     <div class="text-center mt-8">

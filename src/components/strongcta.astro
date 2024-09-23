@@ -1,0 +1,61 @@
+---
+const items = [
+  {
+    title: "Clones",
+    description: "We take great care in every step of the propagation process, from selecting premium genetics to maintaining optimal growing conditions, to produce robust and healthy clones that thrive in any cultivation environment.",
+    image: "/glitterbomb-clone.jpg" // Path to the clones image
+  },
+  {
+    title: "Teens",
+    description: 'Our Pre-Teen plants, ranging from 8-12" in 4x4 coco soil pots, and Teen plants, 14"-18” in 4x4 coco soil pots, offer robust growth stages to fit diverse cultivation needs.',
+    image: "/teen112.jpg" // Path to the teens image
+  },
+  {
+    title: "Ready to flower",
+    description: "Streamline your cultivation process and maximize efficiency. Standing at 18+ inches tall and grown in coco soil 1 gallon pots, these robust plants come fully rooted and primed for an immediate transition to the flowering stage.",
+    image: "/readytoflower.jpg" // Path to the ready to flower image
+  }
+];
+---
+
+<section class="container mx-auto px-4 py-12 mt-32">
+  <div class="grid gap-16">
+    {items.map((item, index) => {
+      // Determine the href based on the item's title
+      let href;
+      if (item.title === "Clones") {
+        href = "/clones";
+      } else if (item.title === "Teens") {
+        href = "/teens";
+      } else if (item.title === "Ready to flower") {
+        href = "/readytoflower";
+      }
+
+      return (
+        <div
+          class={`flex flex-col items-center ${
+            index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+          } md:justify-between`}
+        >
+          {/* Image Section */}
+          <div class="w-full md:w-1/2">
+            <img
+              src={item.image}
+              alt={item.title}
+              class="w-full h-auto rounded-lg shadow-md"
+            />
+          </div>
+
+          {/* Text Section */}
+          <div class="mt-6 md:mt-0 md:mx-10 text-center md:text-left md:w-1/2">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">{item.title}</h2>
+            <p class="text-gray-700 mb-6">{item.description}</p>
+            <button class="bg-black text-white px-6 py-2 rounded-md">
+              <a href={href} class="block">LEARN MORE</a>
+            </button>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</section>

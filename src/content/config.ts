@@ -1,4 +1,5 @@
 // 1. Import utilities from `astro:content`
+import _slug_ from '@pages/blog/[slug].astro';
 import { z, defineCollection } from 'astro:content';
 
 // 2. Define your collection(s)
@@ -15,6 +16,7 @@ const blogCollection = defineCollection({
     author: z.string().default('Henry Romantsov'),
     category: z.string(),
     tags: z.array(z.string()),
+    slugs: z.string(),
   }),
 });
 

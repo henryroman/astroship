@@ -1,16 +1,22 @@
 ---
 import Container from "@components/container.astro";
 import Cta from "@components/cta.astro";
-import Features from "@components/features.astro";
 import Hero from "@components/hero.astro";
+import Solution from "@components/SolutionSection.astro";
+import Benefits from "@components/threeBenefits.astro";
 import Logos from "@components/logos.astro";
 import Layout from "@layouts/Layout.astro";
+import Actuallogos from "@components/actuallogos.astro";
+import Strong from "@components/strongcta.astro";
 ---
 
-<Layout title="">
+<Layout title="" description="Calamus Nursery offers premium cannabis plants, including teens, clones, and ready-to-flower options. We focus on breeder-certified genetics, disease prevention, and quality cultivation practices. Our nursery provides a diverse selection of strains, ensuring genetic purity and authenticity. We partner with top breeders like Sherbzilla and 3rd Coast Genetics to deliver robust, healthy plants. Whether you’re looking for high-yield clones or mature plants ready for flowering, we cater to every cultivation need. With zero-generation tissue clones and expert care, we ensure you achieve huge harvests every time. Stay informed with our monthly newsletter and discover the best cannabis in California.">
   <Container>
     <Hero />
-    <Features />
+    <Solution />
+    <Benefits />
+    <Actuallogos />
+    <Strong />
     <Logos />
     <Cta />
   </Container>

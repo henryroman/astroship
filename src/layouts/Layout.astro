@@ -9,20 +9,29 @@ import '@fontsource-variable/bricolage-grotesque';
 
 export interface Props {
   title: string;
+  description?: string;
 }
+
+
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
+  "/opengraph.png",
   Astro.site
 ).toString();
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Anavue"
-  : "State of the art retail surveillance software.";
+  ? title + " | " + "Calamus Nursery"
+  : "Huge harvests everytime";
+
+
+  const makeDescription = description
+  ? description
+  : "Default description for Calamus Nursery";
+
 ---
 
 <!DOCTYPE html>
@@ -30,28 +39,30 @@ const makeTitle = title
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/calamusfavicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+
+
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Anavue - streamlined data analytics"
+      description={makeDescription}
       canonical={canonicalURL}
-      twitter={{
-        creator: "Henry Serafime Romantsov",
-        site: "anavue.org",
-        card: "summary_large_image",
-      }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Anavue - streamlined data analytics`,
+          title: `Calamus Nursery - Premier teen and clone plants.`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Aanavue Homepage Screenshot",
+          alt: "Calamus Nursery Homepage Screenshot",
         },
       }}
     />

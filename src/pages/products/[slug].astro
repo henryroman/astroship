@@ -1,0 +1,72 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import ProductCard from '../../components/ProductCard1.astro'; // Your product card component
+
+
+import { webhook } from '../../../config';
+
+export async function getStaticPaths() {
+  try {
+    const response = await fetch(webhook);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const products = await response.json();
+    return products.map((product) => ({
+      params: { slug: product.slug }, // Map to slug for the URL
+      props: { product }, // Pass the product data to the page
+    }));
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    return [];
+  }
+}
+
+// Get the current product data from props
+const { product } = Astro.props;
+
+if (!product) {
+  throw new Error("Product not found");
+}
+
+const {
+  slug,
+  name,
+  price,
+  description,
+  description2,
+  description3,
+  description4,
+  description5,
+  image1,
+  image2,
+  image3,
+  image4,
+  ClonePrice,
+} = product;
+
+
+---
+
+<Layout title={name} description={description}>
+  <Container>
+    <!-- Render the product card with product data -->
+    <ProductCard
+      slug={slug}
+      name={name}
+      price={price}
+      description={description}
+      description2={description2}
+      description3={description3}
+      description4={description4}
+      description5={description5}
+      image1={image1}
+      image2={image2}
+      image3={image3}
+      image4={image4}
+      ClonePrice={ClonePrice}
+    />
+  </Container>
+</Layout>

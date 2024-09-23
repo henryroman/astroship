@@ -1,0 +1,13 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import ProductCard from "@components/ProductCard1.astro";
+const { name, description, description2, description3, description4, description5 } = Astro.props;
+---
+
+
+<Layout title={name} description={description + ' ' + description2 + ' ' + description3 + ' ' + description4+ ' ' + description5}>
+    <Container>
+        <ProductCard />
+    </Container>
+  </Layout>
